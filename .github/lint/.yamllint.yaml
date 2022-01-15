@@ -7,6 +7,7 @@ rules:
     allowed-values: ["true", "false", "on"]
   comments:
     min-spaces-from-content: 1
+  document-start: disable
   line-length: disable
   braces:
     min-spaces-inside: 0
@@ -14,4 +15,5 @@ rules:
   brackets:
     min-spaces-inside: 0
     max-spaces-inside: 0
-  indentation: enable
+  indentation:
+    spaces: consistent

@@ -28,9 +28,9 @@ main() {
     verify_binaries
 
     if [[ "${verify}" == 1 ]]; then
-        verify_ansible_hosts
+        # verify_ansible_hosts
         verify_metallb
-        verify_kubevip
+        # verify_kubevip
         verify_age
         verify_git_repository
         verify_cloudflare
@@ -59,8 +59,8 @@ main() {
         # ansible
         envsubst < "${PROJECT_DIR}/tmpl/ansible/kube-vip.yml" \
             > "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/kube-vip.yml"
-        generate_ansible_hosts
-        generate_ansible_host_secrets
+        # generate_ansible_hosts
+        # generate_ansible_host_secrets
     fi
 }
 
@@ -226,7 +226,7 @@ verify_ansible_hosts() {
     local node_hostname=
     local default_control_node_prefix=
     local default_worker_node_prefix=
-    
+
     default_control_node_prefix="BOOTSTRAP_ANSIBLE_DEFAULT_CONTROL_NODE_HOSTNAME_PREFIX"
     default_worker_node_prefix="BOOTSTRAP_ANSIBLE_DEFAULT_NODE_HOSTNAME_PREFIX"
     _has_optional_envar "${default_control_node_prefix}"
